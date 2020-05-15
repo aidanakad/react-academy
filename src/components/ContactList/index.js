@@ -2,17 +2,14 @@ import React from 'react'
 import ContactItem from './Item'
 
 
-function ContactList(props) {
+function ContactList({ contacts }) {
   return (
     <div className="contant-list">
       {
-        props.contacts.map((contact, index) => (
+        contacts.map((contact, index) => (
           <ContactItem
-            name={contact.name}
-            imgSrc={contact.imgSrc}
-            phone={contact.phone}
-            address={contact.address}
             key={index}
+            contact={contact}
           />
         ))
       }
