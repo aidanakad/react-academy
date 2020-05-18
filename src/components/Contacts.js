@@ -1,13 +1,13 @@
 import React from 'react'
 import Nav from './Nav'
 
-function Resume() {
+function Contacts() {
   return (
     <div>
       <Nav />
-      Resume
+      Contacts
     </div>
   )
 }
 
-export default Resume
+export default Contacts

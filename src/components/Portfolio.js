@@ -1,13 +1,13 @@
 import React from 'react'
 import Nav from './Nav'
 
-function Resume() {
+function Portfolio() {
   return (
     <div>
       <Nav />
-      Resume
+      Portfolio
     </div>
   )
 }
 
-export default Resume
+export default Portfolio

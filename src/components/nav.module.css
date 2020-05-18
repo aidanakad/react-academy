@@ -1,0 +1,10 @@
+.nav {
+  display: flex;
+  width: 500px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+.active {
+  color: red;
+}

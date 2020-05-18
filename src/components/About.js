@@ -1,13 +1,14 @@
 import React from 'react'
 import Nav from './Nav'
 
-function Resume() {
+function About(props) {
+  console.log('About', props)
   return (
     <div>
       <Nav />
-      Resume
+      About
     </div>
   )
 }
 
-export default Resume
+export default About
