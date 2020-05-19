@@ -1,0 +1,23 @@
+@import '../../styles/vars.css';
+
+.nav {
+  display: flex;
+  margin: 20px 0;
+  justify-content: center;
+  width: 100%;
+}
+
+.navItem {
+  display: block;
+  padding: 20px 50px;
+  background-color: var(--bg-accent-color);
+  text-decoration: none;
+  color: var(--text-color);
+}
+.navItem:hover {
+  color: var(--text-hover-color);
+}
+
+.active {
+  border-bottom: 4px solid var(--accent-color);
+}

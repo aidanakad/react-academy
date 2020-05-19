@@ -1,23 +1,19 @@
 import React from 'react'
 import { Route, BrowserRouter, Switch } from 'react-router-dom'
-import Resume from './components/Resume'
-import About from './components/About'
-import Portfolio from './components/Portfolio'
-import PortfolioItem from './components/PortfolioItem'
-import Contacts from './components/Contacts'
-import NotFound from './components/NotFound'
+import ResumePage from './components/ResumePage'
+import AboutPage from './components/AboutPage'
+import PortfolioPage from './components/PortfolioPage'
+import ContactsPage from './components/ContactsPage'
 
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={About} exact/>
-        <Route path="/resume" component={Resume} exact/>
-        <Route path="/contacts" component={Contacts} exact/>
-        <Route path="/portfolio" component={Portfolio} exact/>
-        <Route path="/portfolio/:portfolioId" component={PortfolioItem} exact/>
-        <Route component={NotFound} />
+        <Route path="/" component={AboutPage} exact/>
+        <Route path="/resume" component={ResumePage} exact/>
+        <Route path="/contacts" component={ContactsPage} exact/>
+        <Route path="/portfolio" component={PortfolioPage} exact/>
       </Switch>
     </BrowserRouter>
   )
