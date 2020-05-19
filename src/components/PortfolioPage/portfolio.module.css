@@ -1,0 +1,23 @@
+@import '../../styles/vars.css';
+
+.portfolioList {
+  display: flex;
+}
+
+.card {
+  display: flex;
+  width: 50%;
+  padding-right: 20px;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.card img {
+  min-width: 175px;
+  height: 175px;
+  object-fit: cover;
+}
+
+.cardText {
+  margin-left: 20px;
+}
