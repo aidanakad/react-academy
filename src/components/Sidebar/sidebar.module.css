@@ -32,3 +32,8 @@
 .social svg {
   margin-bottom: 15px;
 }
+
+.svg-icon:hover {
+  cursor: pointer;
+  color: var(--text-hover-color);
+}

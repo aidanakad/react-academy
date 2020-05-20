@@ -1,12 +1,12 @@
 import React from 'react'
-import Nav from '../Nav'
+import PageWrapper from '../PageWrapper'
+import Development from '../Development'
 
 function Resume() {
   return (
-    <div>
-      <Nav />
-      Resume
-    </div>
+    <PageWrapper>
+      <Development />
+    </PageWrapper>
   )
 }
 

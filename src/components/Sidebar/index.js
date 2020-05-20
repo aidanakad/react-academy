@@ -2,11 +2,12 @@ import React from 'react'
 import styles from './sidebar.module.css'
 import avatar from '../../images/avatar.png'
 import SocialIcons from './SocialIcons'
+import Avatar from './Avatar'
 
 function Sidebar() {
   return (
     <div className={styles.sidebar}>
-      <img src={avatar} alt="portrait" className={styles.avatar}/>
+      <Avatar avatar={avatar} />
       <div className={styles.name}>
         Lazy Dev
       </div>

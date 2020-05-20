@@ -1,11 +1,12 @@
 import React from 'react'
-import Nav from '../Nav'
+import PageWrapper from '../PageWrapper'
+import Development from '../Development'
 
 function Contacts() {
   return (
-    <div>
-      <Nav />
-    </div>
+    <PageWrapper>
+      <Development />
+    </PageWrapper>
   )
 }
 

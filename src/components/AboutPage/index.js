@@ -1,17 +1,12 @@
 import React from 'react'
-import Nav from '../Nav'
-import Sidebar from '../Sidebar'
-import styles from './about.module.css'
+import PageWrapper from '../PageWrapper'
+import Development from '../Development'
 
 function About() {
   return (
-    <div className={styles.page}>
-      <Sidebar />
-      <div className={styles.content}>
-        <Nav />
-        About
-      </div>
-    </div>
+    <PageWrapper>
+      <Development />
+    </PageWrapper>
   )
 }
 
