@@ -4,7 +4,8 @@ import avatar from '../../images/avatar.png'
 import SocialIcons from './SocialIcons'
 import Avatar from './Avatar'
 
-function Sidebar() {
+function Sidebar(props) {
+  console.log('sidebar', props)
   return (
     <div className={styles.sidebar}>
       <Avatar avatar={avatar} />

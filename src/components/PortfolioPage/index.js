@@ -1,26 +1,27 @@
 import React from 'react'
-import Nav from '../Nav'
+import PageWrapper from '../PageWrapper'
 import Card from './Card'
+import {NavLink} from 'react-router-dom'
 import styles from './portfolio.module.css'
 
 
 function Portfolio() {
   return (
-    <div>
-      <Nav />
-      <div className={styles.portfolioList}>
-        <Card 
+    <PageWrapper>
+      <div className={`${styles.portfolioList} col-12`}>
+        <NavLink  to="/portfolio/contact-list">Contact List</NavLink>
+        {/* <Card 
           link="/portfolio/contact-list"
-          title="Contact List"
-          desc="Краткое описание проекта, тут рассказывает о том, что он из себя представляет"
+          title={4567}
+          desc={456}
         />
         <Card 
           link="/portfolio/todo-list"
           title="Todo List"
-          desc="Краткое описание проекта, тут рассказывает о том, что он из себя представляет"
-        />
+          desc="hello world"
+        /> */}
       </div>
-    </div>
+    </PageWrapper>
   )
 }
 
