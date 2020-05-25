@@ -3,7 +3,6 @@ import PageWrapper from '../PageWrapper'
 import Development from '../Development'
 
 function About(props) {
-  console.log(props)
   return (
     <PageWrapper>
       <Development />

@@ -7,6 +7,7 @@ import ContactList from './components/ContactList'
 import ContactItem from './components/ContactList/ContactItem'
 import ContactsPage from './components/ContactsPage'
 import NotFound from './components/NotFound'
+import TodoList from './components/TodoList'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/portfolio/contact-list" component={ContactList} exact/>
         <Route path="/portfolio/contact-list/:contactId" component={ContactItem} exact/>
 
+        <Route path="/portfolio/todo-list" component={TodoList} exact/>
 
         <Route component={NotFound} />
       </Switch>
