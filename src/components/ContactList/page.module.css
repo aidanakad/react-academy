@@ -1,0 +1,26 @@
+.page {
+  padding: 20px;
+  font-size: 18px;
+}
+
+.form {
+  background-color: #f0f0f0;
+  border: 1px solid #eee;
+  padding: 15px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form input, .form button {
+  width: 200px;
+  padding: 7px 15px;
+  font-size: 18px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.list {
+  margin-top: 20px;
+}
