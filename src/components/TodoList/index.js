@@ -13,7 +13,8 @@ function TodoList() {
 const initialState = {
   todos: [],
   title: '',
-  desc: ''
+  desc: '',
+  priority: 'normal'
 
 }
 
@@ -23,10 +24,10 @@ const reducer = (state, action) =>{
       return{...state, title: action.title};
     case 'CHANGE_DESC':
       return{...state, desc: action.desc}
-      // case 'CHANGE_PRIORITY':
-      //   return{...state, priority: action.priority}
+      case 'CHANGE_PRIORITY':
+        return{...state, priority: action.priority}
     case 'ADD_NEW_TASK':
-      return {...state, contacts:[...state.todos, action.todos]}
+      return {...state, todos:[...state.todos, action.todos]}
     case 'RESET_FIELDS':
       return{...state, title: '', desc:'', priotity: 'normal'}
     default:
@@ -35,17 +36,16 @@ const reducer = (state, action) =>{
   }
 }
 const [state, dispatch] = React.useReducer(reducer, initialState)
-const {title, desc,  todos} = state
+const {title, desc, todos} = state
 
   const handleAdd = (e) => {
     e.preventDefault()
     const newTodo = {
       id: shortid.generate(),
-      title, desc, priority, todos
+      title, desc, priority
     }
     dispatch({type: 'RESET_FIELDS'})
-    dispatch({type: 'ADD_NEW_TASK'})
-    setPriority('normal')
+    dispatch({type: 'ADD_NEW_TASK', todos: newTodo})
   }
 
   return (
@@ -65,7 +65,7 @@ const {title, desc,  todos} = state
         />
         <Priorities 
           priority={priority}
-          setPriority={setPriority}
+          setPriority={(value, e)=> dispatch({type:'CHANGE_PRIORITY', priority: e.target.value})}
         />
         <button onClick={handleAdd} >
           Добавить
