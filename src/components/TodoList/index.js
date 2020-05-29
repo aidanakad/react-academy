@@ -65,7 +65,7 @@ const {title, desc, priority, todos} = state
         />
         <Priorities 
           priority={priority}
-          setPriority={(value)=> dispatch({type:'CHANGE_PRIORITY'})}
+          setPriority={(value)=> dispatch({type:'CHANGE_PRIORITY', priority: value})}
         />
         <button onClick={handleAdd} >
           Добавить
