@@ -5,21 +5,47 @@ import style from './todo.module.css'
 import Priorities from './Priority'
 
 function TodoList() {
-  const [todos, setTodos] = React.useState([])
-  const [title, setTitle] = React.useState('')
-  const [desc, setDesc] = React.useState('')
+  // const [todos, setTodos] = React.useState([])
+  // const [title, setTitle] = React.useState('')
+  // const [desc, setDesc] = React.useState('')
   const [priority, setPriority] = React.useState('normal')
+
+const initialState = {
+  todos: [],
+  title: '',
+  desc: ''
+
+}
+
+const reducer = (state, action) =>{
+  switch(action.type){
+    case 'CHANGE_TITLE':
+      return{...state, title: action.title};
+    case 'CHANGE_DESC':
+      return{...state, desc: action.desc}
+      // case 'CHANGE_PRIORITY':
+      //   return{...state, priority: action.priority}
+    case 'ADD_NEW_TASK':
+      return {...state, contacts:[...state.todos, action.todos]}
+    case 'RESET_FIELDS':
+      return{...state, title: '', desc:'', priotity: 'normal'}
+    default:
+      throw new Error()
+
+  }
+}
+const [state, dispatch] = React.useReducer(reducer, initialState)
+const {title, desc,  todos} = state
 
   const handleAdd = (e) => {
     e.preventDefault()
     const newTodo = {
       id: shortid.generate(),
-      title, desc, priority
+      title, desc, priority, todos
     }
-    setTitle('')
-    setDesc('')
+    dispatch({type: 'RESET_FIELDS'})
+    dispatch({type: 'ADD_NEW_TASK'})
     setPriority('normal')
-    setTodos([ ...todos, newTodo ])
   }
 
   return (
@@ -30,12 +56,12 @@ function TodoList() {
           type="text" 
           placeholder="Название" 
           value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          onChange={(e) => dispatch({type:'CHANGE_TITLE', title: e.target.value})}
         />
         <textarea 
           placeholder="Описание" 
           value={desc}
-          onChange={(e) => setDesc(e.target.value)}
+          onChange={(e) => dispatch({type:'CHANGE_DESC', desc: e.target.value})}
         />
         <Priorities 
           priority={priority}
